@@ -27,3 +27,23 @@
     cursor: not-allowed;
   }
 }
+
+.menu {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+
+.changeLangJp{
+  &:hover{
+    background-color: #bc2323;
+  }
+}
+
+.changeLangEn{
+  &:hover{
+    background-color: #2353bc;
+  }
+}
+

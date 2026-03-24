@@ -1,8 +1,11 @@
 import Field from "@/shared/ui/Field";
 import {useContext} from "react";
 import {TaskContext} from "@/entities/todo";
+import {useTranslation} from "react-i18next";
 
 const SearchTaskForm = (props) => {
+
+    const {t} = useTranslation();
 
     const {styles} = props
 
@@ -18,7 +21,7 @@ const SearchTaskForm = (props) => {
             >
             <Field
                 className={styles.field}
-                label="タスクを探し"
+                label={t('SearchTaskForm.Search')}
                 id="search-task"
                 type="search"
                 value={searchQuery}

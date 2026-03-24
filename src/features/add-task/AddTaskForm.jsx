@@ -3,7 +3,11 @@ import Button from "@/shared/ui/Button";
 import {useContext, useState} from "react";
 import {TaskContext} from "@/entities/todo";
 
+import {useTranslation} from "react-i18next";
+
 const AddTaskForm = (props) => {
+
+    const {t, i18n} = useTranslation();
 
     const {styles} = props
 
@@ -32,14 +36,14 @@ const AddTaskForm = (props) => {
         const clearValue = value.trim()
         const hasOnlySpaces = value.length > 0 && clearValue.length === 0
         setNewTaskTitle(value)
-        setError(hasOnlySpaces ? 'スペースキーしかあるのでタスクをできません' : '')
+        setError(hasOnlySpaces ? t('AddTaskForm.SpaceOnlyError') : '')
     }
 
     return (
         <form className={styles.form} onSubmit={onSubmit}>
             <Field
                 className={styles.field}
-                label="新しいタスク"
+                label={t('AddTaskForm.NewTask')}
                 id="new-task"
                 value={newTaskTitle}
                 error={error}
@@ -49,7 +53,7 @@ const AddTaskForm = (props) => {
             <Button
                 type="submit"
                 isDisabled={isNewTasTitleEmpty}
-            >追加</Button>
+            >{t('AddTaskForm.AddFunc')}</Button>
         </form>
     )
 }
