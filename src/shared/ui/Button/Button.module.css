@@ -10,7 +10,7 @@
   border: 1px solid var(--color-dark-2);
   border-radius: var(--border-radius);
 }
-.button:not(:disabled):hover {
+.button:not(:disabled):hover:not(.changeLangJp, .changeLangEn) {
   color: var(--color-dark-2);
   background-color: transparent;
 }
@@ -26,15 +26,26 @@
 .menu {
   display: flex;
   gap: 20px;
+  padding: 1em;
   justify-content: center;
+  border-top: 1px solid var(--color-gray-3);
+  border-radius: 5%;
 }
 
-.changeLangJp:hover {
+.changeLangJp {
   background-color: #bc2323;
 }
+.changeLangJp:hover:not(:disabled) {
+  background-color: transparent;
+  color: #bc2323;
+}
 
-.changeLangEn:hover {
+.changeLangEn {
   background-color: #2353bc;
+}
+.changeLangEn:hover:not(:disabled) {
+  color: #2353bc;
+  background-color: transparent;
 }
 
 /*# sourceMappingURL=Button.module.css.map */

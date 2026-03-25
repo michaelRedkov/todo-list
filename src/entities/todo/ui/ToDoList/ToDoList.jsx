@@ -1,8 +1,11 @@
 import {TodoItem, TaskContext} from "@/entities/todo";
 import {useContext} from "react";
+import {useTranslation} from "react-i18next";
 
 
 const ToDoList = (props) => {
+
+    const {t} = useTranslation();
 
     const {styles} = props
 
@@ -18,7 +21,7 @@ const ToDoList = (props) => {
     if (!hasTasks) {
         return (
             <div className={styles.emptyMessage}>
-                まだタスクはありません
+                {t('ToDoList.Empty')}
             </div>
         )
     }
@@ -26,7 +29,7 @@ const ToDoList = (props) => {
     if (hasTasks && isEmptyFilteredTasks) {
         return (
             <div className={styles.emptyMessage}>
-                タスクは一つも見つからなかった
+                {t('ToDoList.NotFound')}
             </div>
         )
     }

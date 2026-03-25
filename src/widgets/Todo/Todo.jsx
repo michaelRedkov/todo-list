@@ -22,7 +22,7 @@ const Todo = () => {
                 <ToDoInfo styles={styles}/>
                 <Button
                     onClick={() => firstIncompleteTaskRef.current?.scrollIntoView({behavior: 'smooth',})}>
-                    一番目完成しないタスクを見せる
+                    {t('UndoneTask.Search')}
                 </Button>
                 <TodoList styles={styles}/>
                 <ChangeLanguage/>

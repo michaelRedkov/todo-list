@@ -1,7 +1,10 @@
 import {memo, useContext, useMemo} from "react";
 import {TaskContext} from "@/entities/todo";
+import {useTranslation} from "react-i18next";
 
 const ToDoInfo = (props) => {
+
+    const {t} = useTranslation();
 
     const {styles} = props
 
@@ -22,14 +25,14 @@ const ToDoInfo = (props) => {
 
     return (
         <div className={styles.info}>
-            <div className={styles.totalTasks}>完成: {done} from {total}</div>
+            <div className={styles.totalTasks}>{t('ToDoInfo.Completed')}: {done} / {total}</div>
             {hasTasks && (
                 <button
                     className={styles.deleteAllButton}
                     type="button"
                     onClick={deleteAllTasks}
                     >
-                    全部削除
+                    {t('ToDoInfo.DeleteAll')}
                 </button>
             )}
         </div>

@@ -10,11 +10,19 @@ const ChangeLanguage = () => {
             <button
                 className={`${styles.button} ${styles.changeLangJp}`}
                 onClick={() => i18n.changeLanguage('jp')}
-                disabled={i18n.language === 'jp'}>JP</button>
+                disabled={i18n.language === 'jp'}>
+                <span>
+                    {'\u{1F1EF}\u{1F1F5}'}
+                </span>
+            </button>
             <button
                 className={`${styles.button} ${styles.changeLangEn}`}
                 onClick={() => i18n.changeLanguage('en')}
-                disabled={i18n.language === 'en'}>EN</button>
+                disabled={i18n.language === 'en'}>
+                <span>
+                    {' \u{1F1FA}\u{1F1F8} '}
+                </span>
+            </button>
         </div>
     )
 }

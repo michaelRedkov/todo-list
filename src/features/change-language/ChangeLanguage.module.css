@@ -1,6 +1,7 @@
 .menu {
   display: flex;
   gap: 20px;
+  border: 6px solid red;
 }
 
 /*# sourceMappingURL=ChangeLanguage.module.css.map */

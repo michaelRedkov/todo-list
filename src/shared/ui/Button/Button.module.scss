@@ -11,7 +11,7 @@
   border-radius: var(--border-radius);
 
   &:not(:disabled){
-    &:hover {
+    &:hover:not(.changeLangJp, .changeLangEn) {
       color: var(--color-dark-2);
       background-color: transparent;
     }
@@ -31,19 +31,40 @@
 .menu {
   display: flex;
   gap: 20px;
+  padding: 1em;
   justify-content: center;
+  border-top: 1px solid var(--color-gray-3);
+  border-radius: 5%;
 }
 
 
 .changeLangJp{
-  &:hover{
     background-color: #bc2323;
-  }
+    &:hover:not(:disabled){
+      background-color: transparent;
+      color: #bc2323;
+
+      //&:before{
+      //  content: '';
+      //  position: absolute;
+      //  top: 50%;
+      //  left: 50%;
+      //  width: 1em;
+      //  aspect-ratio: 1;
+      //  background-color: #bc2323;
+      //  border-radius: 50%;
+      //
+      //  transform: translate(-50%, -50%) scale(0);
+      //  transition-duration: 0.5s;
+      //}
+    }
 }
 
 .changeLangEn{
-  &:hover{
     background-color: #2353bc;
-  }
+    &:hover:not(:disabled){
+      color: #2353bc;
+      background-color: transparent;
+    }
 }
 
